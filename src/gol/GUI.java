@@ -23,6 +23,9 @@ import javax.swing.border.MatteBorder;
  *
  * @author qcai
  */
+
+
+// gui class
 public class GUI {
        
     public GUI() {
