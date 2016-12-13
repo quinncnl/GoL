@@ -66,7 +66,13 @@ public class GUI {
                      textArea.setText("Affected items: " + item.toString());
                      
                      if (event.getStateChange() == ItemEvent.SELECTED) {
-                         textArea.setText(item.toString() + " selected.");
+                        // textArea.setText(item.toString() + " selected.");
+                        if(item.toString()=="Glider")
+                        {
+                               
+                        
+                        }
+                        
                      }
                      
                      if (event.getStateChange() == ItemEvent.DESELECTED) {
