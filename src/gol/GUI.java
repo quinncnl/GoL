@@ -56,7 +56,7 @@ public class GUI {
             }
         },  2000, 100);
 
-        grid.applyPattern(new ExploderPattern());
+        
                 
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -107,15 +107,14 @@ public class GUI {
                         // textArea.setText(item.toString() + " selected.");
                         if(item.toString()=="Glider")
                         {
-                               
+                               grid.applyPattern(new GliderPattern());
                         
-                        }
+                        }else
+                        {grid.applyPattern(new ExploderPattern());}
                         
                      }
                      
-                     if (event.getStateChange() == ItemEvent.DESELECTED) {
-                         textArea.setText(item.toString() + " deselected.");
-                     }
+                     
                 } //
                 // Listening if a new items of the combo box has been selected.
                 //
