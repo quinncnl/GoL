@@ -20,44 +20,5 @@ public interface Pattern {
     public int getWidth();
     public List<CellState> getPatternArray();
 }
-//
-//public class Pattern {
-//
-//    public Pattern()
-//    {
-//    
-//        height = 3;
-//        width = 3;
-//        patternList.add(CellState.dead);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.dead);
-//        patternList.add(CellState.dead);
-//        patternList.add(CellState.dead);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.alive);
-//        
-//        
-//        
-//        
-//        height = 4;
-//        width = 3;
-//        patternList.add(CellState.dead);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.dead);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.dead);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.dead);
-//        patternList.add(CellState.alive);
-//        patternList.add(CellState.dead);
-//        
-//    }
-//    
-//    
-//    
+
     

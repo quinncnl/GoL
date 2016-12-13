@@ -20,7 +20,7 @@ public class GliderPattern implements Pattern {
     public List<CellState> patternList = new ArrayList();
 
     
-        public GliderPattern()
+    public GliderPattern()
     {
     
         height = 3;
@@ -39,16 +39,17 @@ public class GliderPattern implements Pattern {
 
     @Override
     public int getHeight() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return height;
+        
     }
 
     @Override
     public int getWidth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return width;
     }
 
     @Override
     public List<CellState> getPatternArray() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return patternList;
     }
 }
