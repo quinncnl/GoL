@@ -43,6 +43,7 @@ public class GUI {
     private Timer timer;
     
     public GUI() {
+
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -72,15 +73,17 @@ public class GUI {
                 JButton Start = new JButton("Start");
                 JComboBox combo = new JComboBox();
                 JPanel panel = new JPanel();
-                Start.setBounds(10, 10, 100, 30);
+             
                 
                 JButton Reset = new JButton("Reset");
-                Reset.setBounds(10, 40, 100, 30);
-                combo.setBounds(10, 70, 100, 30);
+                combo.setBounds(400, 10, 250, 30);
+                Start.setBounds(650, 10, 100, 30);
+                Reset.setBounds(750, 10, 100, 30);
                 combo.addItem("Glider");
                 combo.addItem("10 Row Cell");
                 combo.addItem("Exploder"); 
                 combo.addItem("LightWeight Spaceship");
+                combo.addItem("Pulsar");
                 //JTextArea textArea=new JTextArea();
                 //textArea.setBounds(10, 100, 200, 30);
                 
@@ -107,6 +110,10 @@ public class GUI {
                      
                      if (event.getStateChange() == ItemEvent.SELECTED) {
                         // textArea.setText(item.toString() + " selected.");
+                        
+                        
+                        
+                        
                         if(item.toString()=="Glider")
                         {
                                grid.applyPattern(new GliderPattern());
@@ -122,6 +129,11 @@ public class GUI {
                         {
                             {grid.applyPattern(new LightWeightSpaceship());}
                         }
+                          else if(item.toString()=="Pulsar")
+                        {
+                            {grid.applyPattern(new PulsarPattern());}
+                        }
+                        
                      }
                      
                      
