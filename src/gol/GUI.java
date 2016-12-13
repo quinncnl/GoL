@@ -76,8 +76,8 @@ public class GUI {
                 Reset.setBounds(10, 40, 100, 30);
                 combo.setBounds(10, 70, 100, 30);
                 combo.addItem("Glider");
-                combo.addItem("Small Explorer");
-                combo.addItem("Explorer"); 
+                combo.addItem("10 Row Cell");
+                combo.addItem("Exploder"); 
                 JTextArea textArea=new JTextArea();
                 textArea.setBounds(10, 100, 200, 30);
                 
@@ -109,8 +109,13 @@ public class GUI {
                         {
                                grid.applyPattern(new GliderPattern());
                         
-                        }else
+                        }else if(item.toString()=="Exploder")
                         {grid.applyPattern(new ExploderPattern());}
+                        
+                        else if(item.toString()=="10 Row Cell")
+                        {
+                            {grid.applyPattern(new TenCellRow());}
+                        }
                         
                      }
                      
