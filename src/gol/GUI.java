@@ -6,20 +6,25 @@
 package gol;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.util.List;
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javax.swing.border.Border;
 import javax.swing.border.MatteBorder;
 import java.awt.event.ActionEvent;
@@ -32,8 +37,24 @@ import javax.swing.JTextArea;
  */
 // gui class
 public class GUI {
-       
+           
+    public List<Cell> cells;
+    private Grid grid = new Grid();
+    private Timer timer;
+    
     public GUI() {
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Next state");
+                for (int i = 0; i < grid.cells.size(); i++) {
+                    grid.cells.get(i).goNextState();
+                }
+            }
+        },  1000, 1000);
+
+                
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -90,7 +111,7 @@ public class GUI {
             
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLayout(new BorderLayout());
-                frame.add(new Grid());
+                frame.add(grid);
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);

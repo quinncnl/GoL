@@ -5,7 +5,6 @@
  */
 package gol;
 
-import gol.CellState;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
@@ -13,7 +12,6 @@ import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -28,13 +26,17 @@ public class Cell extends JPanel {
     public List<Cell> neighbours = new ArrayList();
     
     public Cell() {
+        
+        state = CellState.dead;
+        setBackground(Color.GRAY);
+        
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                defaultBackground = getBackground();
                 setBackground(Color.BLUE);
                 
-                System.out.println(neighbours.size());
+                state = CellState.alive;
+                System.out.println(getNumberOfLivingNeighbours());
             }
 
         });
@@ -53,7 +55,34 @@ public class Cell extends JPanel {
     }
     
     public void goNextState() {
+        int livingNum = getNumberOfLivingNeighbours();
         
+        switch (state) {
+            case alive:
+                if (livingNum >= 2 && livingNum <= 3) {
+
+                } else if (livingNum > 3 || livingNum < 2) {
+                    state = CellState.goingDead;
+                }
+                break;
+            case dead:
+                if (livingNum == 3) {
+                    state = CellState.goingAlive;
+                }
+                break;
+            case goingAlive:
+                state = CellState.alive;
+                break;
+            case goingDead:
+                state = CellState.dead;
+                break;
+        }
+        if (state == CellState.alive) {
+            setBackground(Color.BLUE);
+        }
+        else if (state == CellState.dead) {
+            setBackground(Color.GRAY);
+        }
     }
 
     @Override
