@@ -54,6 +54,24 @@ public class Cell extends JPanel {
         return ret;
     }
     
+    public void settleState() {
+        switch (state) {
+            case goingAlive:
+                state = CellState.alive;
+                break;
+            case goingDead:
+                state = CellState.dead;
+                break;
+        }
+        if (state == CellState.alive) {
+            setBackground(Color.BLUE);
+        }
+        else if (state == CellState.dead) {
+            setBackground(Color.GRAY);
+        }
+        
+    }
+    
     public void goNextState() {
         int livingNum = getNumberOfLivingNeighbours();
         
@@ -81,12 +99,12 @@ public class Cell extends JPanel {
         else if (state == CellState.dead) {
             setBackground(Color.GRAY);
         }
-        else if (state == CellState.goingAlive) {
-            setBackground(Color.GREEN);
-        }
-        else if (state == CellState.goingDead) {
-            setBackground(Color.RED);
-        }
+//        else if (state == CellState.goingAlive) {
+//            setBackground(Color.GREEN);
+//        }
+//        else if (state == CellState.goingDead) {
+//            setBackground(Color.RED);
+//        }
     }
 
     @Override

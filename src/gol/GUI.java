@@ -47,10 +47,12 @@ public class GUI {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                System.out.println("Next state");
                 for (int i = 0; i < grid.cells.size(); i++) {
-                    grid.cells.get(i).goNextState();
-                }
+                            grid.cells.get(i).goNextState();
+                        }
+                        for (int i = 0; i < grid.cells.size(); i++) {
+                            grid.cells.get(i).settleState();
+                        }
             }
         },  2000, 100);
 
@@ -84,7 +86,10 @@ public class GUI {
                     public void actionPerformed(ActionEvent e) {
                         for (int i = 0; i < grid.cells.size(); i++) {
                             grid.cells.get(i).goNextState();
-                        }                
+                        }
+                        for (int i = 0; i < grid.cells.size(); i++) {
+                            grid.cells.get(i).settleState();
+                        }
                     }
                 });
 
