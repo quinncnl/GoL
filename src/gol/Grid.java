@@ -73,6 +73,7 @@ public class Grid extends JPanel {
 //        
         int offsetX = new Random().nextInt(column);
         int offsetY = new Random().nextInt(row);
+
         int indexPatternList = 0;
         for (int i = 0; i < pattern.getHeight(); i++) {
             for (int j = 0; j < pattern.getWidth(); j++) {                            
