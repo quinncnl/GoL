@@ -106,8 +106,6 @@ public class Grid extends JPanel {
                 addNeighbourAtIndex(c, i_b);
                 addNeighbourAtIndex(c, i_br);
 
-                System.out.println(c.neighbours.size());
-
             }
         }
     }
