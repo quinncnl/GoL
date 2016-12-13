@@ -52,8 +52,9 @@ public class GUI {
                     grid.cells.get(i).goNextState();
                 }
             }
-        },  1000, 1000);
+        },  2000, 100);
 
+        grid.applyPattern(new ExploderPattern());
                 
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -77,6 +78,17 @@ public class GUI {
                 combo.addItem("Explorer"); 
                 JTextArea textArea=new JTextArea();
                 textArea.setBounds(10, 100, 200, 30);
+                
+                
+                Start.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        for (int i = 0; i < grid.cells.size(); i++) {
+                            grid.cells.get(i).goNextState();
+                        }                
+                    }
+                });
+
+                
                 
                  combo.addItemListener((ItemEvent event) -> {
                      JComboBox comboBox = (JComboBox) event.getSource();

@@ -59,6 +59,34 @@ public class Grid extends JPanel {
         setupNeighbours();
         
     }
+    
+    public void applyPattern(Pattern pattern) {
+        int index = 0;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+
+                index = i * column + j;
+                Cell c = cells.get(index);
+                c.state = CellState.dead;
+            }
+        }
+        
+        int offsetX = 10;
+        int offsetY = 10;
+        
+        int indexPatternList = 0;
+        for (int i = 0; i < pattern.getHeight(); i++) {
+            for (int j = 0; j < pattern.getWidth(); j++) {                            
+                indexPatternList = i * pattern.getWidth() + j;
+                if (pattern.getPatternArray().get(indexPatternList) == CellState.alive) {
+                    index = (i + offsetX) * column + j + offsetY;
+                    Cell cell = cells.get(index);
+                    cell.state = CellState.alive;
+                    cell.setBackground(Color.BLUE);
+                }
+            }
+        }
+    }
 
     private void setupNeighbours() {
         int index = 0;

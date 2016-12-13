@@ -47,7 +47,7 @@ public class Cell extends JPanel {
         
         for(Iterator<Cell> it = neighbours.iterator(); it.hasNext(); ) {
             Cell cell = it.next();
-            if (cell.state == CellState.alive) {
+            if (cell.state == CellState.alive || cell.state == CellState.goingDead) {
                 ret ++;
             }
         }
@@ -59,9 +59,7 @@ public class Cell extends JPanel {
         
         switch (state) {
             case alive:
-                if (livingNum >= 2 && livingNum <= 3) {
-
-                } else if (livingNum > 3 || livingNum < 2) {
+                if (livingNum > 3 || livingNum < 2) {
                     state = CellState.goingDead;
                 }
                 break;
@@ -82,6 +80,12 @@ public class Cell extends JPanel {
         }
         else if (state == CellState.dead) {
             setBackground(Color.GRAY);
+        }
+        else if (state == CellState.goingAlive) {
+            setBackground(Color.GREEN);
+        }
+        else if (state == CellState.goingDead) {
+            setBackground(Color.RED);
         }
     }
 
