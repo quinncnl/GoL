@@ -8,21 +8,33 @@ package gol;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.List;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.border.Border;
+import javax.swing.border.MatteBorder;
+import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import javax.swing.JTextArea;
 /**
  *
  * @author qcai
  */
-
- 
 // gui class
 public class GUI {
            
@@ -62,15 +74,34 @@ public class GUI {
                 combo.setBounds(10, 70, 100, 30);
                 combo.addItem("Glider");
                 combo.addItem("Small Explorer");
-                combo.addItem("Explorer");
+                combo.addItem("Explorer"); 
+                JTextArea textArea=new JTextArea();
+                textArea.setBounds(10, 100, 200, 30);
                 
-            //    panel.setBounds(800, 800, 200, 100);
-            //   panel.add(Start);
-            //    panel.add(Reset);
-            //   frame.add(panel);
-            frame.add(Start);
-            frame.add(Reset);
-            frame.add(combo);
+                 combo.addItemListener((ItemEvent event) -> {
+                     JComboBox comboBox = (JComboBox) event.getSource();
+                     
+                     // The item affected by the event.
+                     Object item = event.getItem();
+                     
+                     textArea.setText("Affected items: " + item.toString());
+                     
+                     if (event.getStateChange() == ItemEvent.SELECTED) {
+                         textArea.setText(item.toString() + " selected.");
+                     }
+                     
+                     if (event.getStateChange() == ItemEvent.DESELECTED) {
+                         textArea.setText(item.toString() + " deselected.");
+                     }
+                } //
+                // Listening if a new items of the combo box has been selected.
+                //
+                );
+                
+                frame.add(Start);
+                frame.add(Reset);
+                frame.add(combo);
+                frame.add(textArea);
             
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLayout(new BorderLayout());
