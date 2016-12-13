@@ -6,19 +6,14 @@
 package gol;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  *
  * @author benkhtai
  */
-public class GliderPattern implements Pattern {
-    
-    
-    public int height = 0;
-    public int width = 0;
-    public List<CellState> patternList = new ArrayList();
-
+public class GliderPattern extends BasePattern {
     
     public GliderPattern()
     {
@@ -35,21 +30,14 @@ public class GliderPattern implements Pattern {
         patternList.add(CellState.alive);
         patternList.add(CellState.alive);
         
+        Collections.reverse(patternList);
+        
 }
 
-    @Override
-    public int getHeight() {
-       return height;
-        
-    }
-
-    @Override
-    public int getWidth() {
-        return width;
-    }
 
     @Override
     public List<CellState> getPatternArray() {
         return patternList;
     }
+
 }

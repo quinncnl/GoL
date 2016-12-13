@@ -19,6 +19,10 @@ public interface Pattern {
     public int getHeight();
     public int getWidth();
     public List<CellState> getPatternArray();
+
+    public void verticalReflection();
+    public void horizontalReflection();
+    
 }
 
     

@@ -56,7 +56,9 @@ public class GUI {
             }
         },  2000, 100);
 
-        grid.applyPattern(new ExploderPattern());
+        Pattern pattern = new GliderPattern();
+        pattern.horizontalReflection();
+        grid.applyPattern(pattern);
                 
         EventQueue.invokeLater(new Runnable() {
             @Override
