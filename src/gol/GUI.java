@@ -78,8 +78,8 @@ public class GUI {
                 combo.addItem("Glider");
                 combo.addItem("10 Row Cell");
                 combo.addItem("Exploder"); 
-                JTextArea textArea=new JTextArea();
-                textArea.setBounds(10, 100, 200, 30);
+                //JTextArea textArea=new JTextArea();
+                //textArea.setBounds(10, 100, 200, 30);
                 
                 
                 Start.addActionListener(new ActionListener() {
@@ -101,7 +101,7 @@ public class GUI {
                      // The item affected by the event.
                      Object item = event.getItem();
                      
-                     textArea.setText("Affected items: " + item.toString());
+                     //textArea.setText("Affected items: " + item.toString());
                      
                      if (event.getStateChange() == ItemEvent.SELECTED) {
                         // textArea.setText(item.toString() + " selected.");
@@ -128,7 +128,7 @@ public class GUI {
                 frame.add(Start);
                 frame.add(Reset);
                 frame.add(combo);
-                frame.add(textArea);
+                //frame.add(textArea);
             
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLayout(new BorderLayout());
