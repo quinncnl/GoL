@@ -54,10 +54,10 @@ public class GUI {
                             grid.cells.get(i).settleState();
                         }
             }
-        },  2000, 100);
+        },  2000, 50);
 
-        Pattern pattern = new GliderPattern();
-        pattern.horizontalReflection();
+        Pattern pattern = new LightWeightSpaceship();
+//        pattern.horizontalReflection();
         grid.applyPattern(pattern);
                 
         EventQueue.invokeLater(new Runnable() {
@@ -83,7 +83,6 @@ public class GUI {
                 combo.addItem("LightWeight Spaceship");
                 //JTextArea textArea=new JTextArea();
                 //textArea.setBounds(10, 100, 200, 30);
-                
                 
                 Start.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {

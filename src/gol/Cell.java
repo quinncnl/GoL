@@ -28,12 +28,12 @@ public class Cell extends JPanel {
     public Cell() {
         
         state = CellState.dead;
-        setBackground(Color.GRAY);
+        setBackground(Color.BLACK);
         
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                setBackground(Color.BLUE);
+                setBackground(Color.GRAY);
                 
                 state = CellState.alive;
                 System.out.println(getNumberOfLivingNeighbours());
@@ -65,10 +65,10 @@ public class Cell extends JPanel {
                 break;
         }
         if (state == CellState.alive) {
-            setBackground(Color.BLUE);
+            setBackground(Color.GRAY);
         }
         else if (state == CellState.dead) {
-            setBackground(Color.GRAY);
+            setBackground(Color.BLACK);
         }
         
     }
@@ -95,13 +95,13 @@ public class Cell extends JPanel {
                 break;
         }
         if (state == CellState.alive) {
-            setBackground(Color.BLUE);
-        }
-        else if (state == CellState.dead) {
             setBackground(Color.GRAY);
         }
+        else if (state == CellState.dead) {
+            setBackground(Color.BLACK);
+        }
 //        else if (state == CellState.goingAlive) {
-//            setBackground(Color.GREEN);
+//            setBackground(Color.BLACK);
 //        }
 //        else if (state == CellState.goingDead) {
 //            setBackground(Color.RED);
