@@ -78,10 +78,11 @@ public class GUI {
                 Reset.setBounds(10, 40, 100, 30);
                 combo.setBounds(10, 70, 100, 30);
                 combo.addItem("Glider");
-                combo.addItem("Small Explorer");
-                combo.addItem("Explorer"); 
-                JTextArea textArea=new JTextArea();
-                textArea.setBounds(10, 100, 200, 30);
+                combo.addItem("10 Row Cell");
+                combo.addItem("Exploder"); 
+                combo.addItem("LightWeight Spaceship");
+                //JTextArea textArea=new JTextArea();
+                //textArea.setBounds(10, 100, 200, 30);
                 
                 
                 Start.addActionListener(new ActionListener() {
@@ -103,21 +104,28 @@ public class GUI {
                      // The item affected by the event.
                      Object item = event.getItem();
                      
-                     textArea.setText("Affected items: " + item.toString());
+                     //textArea.setText("Affected items: " + item.toString());
                      
                      if (event.getStateChange() == ItemEvent.SELECTED) {
                         // textArea.setText(item.toString() + " selected.");
                         if(item.toString()=="Glider")
                         {
-                               
+                               grid.applyPattern(new GliderPattern());
                         
+                        }else if(item.toString()=="Exploder")
+                        {grid.applyPattern(new ExploderPattern());}
+                        
+                        else if(item.toString()=="10 Row Cell")
+                        {
+                            {grid.applyPattern(new TenCellRow());}
                         }
-                        
+                        else if(item.toString()=="LightWeight Spaceship")
+                        {
+                            {grid.applyPattern(new LightWeightSpaceship());}
+                        }
                      }
                      
-                     if (event.getStateChange() == ItemEvent.DESELECTED) {
-                         textArea.setText(item.toString() + " deselected.");
-                     }
+                     
                 } //
                 // Listening if a new items of the combo box has been selected.
                 //
@@ -126,7 +134,7 @@ public class GUI {
                 frame.add(Start);
                 frame.add(Reset);
                 frame.add(combo);
-                frame.add(textArea);
+                //frame.add(textArea);
             
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLayout(new BorderLayout());
