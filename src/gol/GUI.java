@@ -78,6 +78,7 @@ public class GUI {
                 combo.addItem("Glider");
                 combo.addItem("10 Row Cell");
                 combo.addItem("Exploder"); 
+                combo.addItem("LightWeight Spaceship");
                 //JTextArea textArea=new JTextArea();
                 //textArea.setBounds(10, 100, 200, 30);
                 
@@ -116,7 +117,10 @@ public class GUI {
                         {
                             {grid.applyPattern(new TenCellRow());}
                         }
-                        
+                        else if(item.toString()=="LightWeight Spaceship")
+                        {
+                            {grid.applyPattern(new LightWeightSpaceship());}
+                        }
                      }
                      
                      
