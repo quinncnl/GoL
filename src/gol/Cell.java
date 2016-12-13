@@ -54,6 +54,7 @@ public class Cell extends JPanel {
         return ret;
     }
     
+    
     public void settleState() {
         switch (state) {
             case goingAlive:
