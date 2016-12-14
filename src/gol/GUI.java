@@ -43,21 +43,22 @@ public class GUI {
     private Timer timer;
     
     public GUI() {
-//        timer = new Timer();
-//        timer.scheduleAtFixedRate(new TimerTask() {
-//            @Override
-//            public void run() {
-//                for (int i = 0; i < grid.cells.size(); i++) {
-//                            grid.cells.get(i).goNextState();
-//                        }
-//                        for (int i = 0; i < grid.cells.size(); i++) {
-//                            grid.cells.get(i).settleState();
-//                        }
-//            }
-//        },  2000, 100);
 
-        Pattern pattern = new GliderPattern();
-        pattern.horizontalReflection();
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                for (int i = 0; i < grid.cells.size(); i++) {
+                            grid.cells.get(i).goNextState();
+                        }
+                        for (int i = 0; i < grid.cells.size(); i++) {
+                            grid.cells.get(i).settleState();
+                        }
+            }
+        },  2000, 50);
+
+        Pattern pattern = new LightWeightSpaceship();
+//        pattern.horizontalReflection();
         grid.applyPattern(pattern);
                 
         EventQueue.invokeLater(new Runnable() {
@@ -85,7 +86,6 @@ public class GUI {
                 combo.addItem("Pulsar");
                 //JTextArea textArea=new JTextArea();
                 //textArea.setBounds(10, 100, 200, 30);
-                
                 
                 Start.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {

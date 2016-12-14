@@ -10,6 +10,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.MatteBorder;
@@ -21,7 +22,7 @@ import javax.swing.border.MatteBorder;
 public class Grid extends JPanel {
 
     public int column = 120;
-    public int row = 90;
+    public int row = 110;
     public List<Cell> cells;
 
     public Grid() {
@@ -39,15 +40,15 @@ public class Grid extends JPanel {
                 Border border = null;
                 if (i < 4) {
                     if (j < 4) {
-                        border = new MatteBorder(1, 1, 0, 0, Color.GRAY);
+                        border = new MatteBorder(1, 1, 0, 0, Color.BLACK);
                     } else {
-                        border = new MatteBorder(1, 1, 0, 1, Color.GRAY);
+                        border = new MatteBorder(1, 1, 0, 1, Color.BLACK);
                     }
                 } else {
                     if (j < 4) {
-                        border = new MatteBorder(1, 1, 1, 0, Color.GRAY);
+                        border = new MatteBorder(1, 1, 1, 0, Color.BLACK);
                     } else {
-                        border = new MatteBorder(1, 1, 1, 1, Color.GRAY);
+                        border = new MatteBorder(1, 1, 1, 1, Color.BLACK);
                     }
                 }
                 cells.add(cellPane);
@@ -56,23 +57,23 @@ public class Grid extends JPanel {
             }
         }
 
-        setupNeighbours();
-        
+        setupNeighbours();        
     }
     
     public void applyPattern(Pattern pattern) {
         int index = 0;
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < column; j++) {
-                index = i * column + j;
-                Cell c = cells.get(index);
-                c.state = CellState.dead;
-            }
-        }
-        
-        int offsetX = 10;
-        int offsetY = 10;
-        
+//        for (int i = 0; i < row; i++) {
+//            for (int j = 0; j < column; j++) {
+//
+//                index = i * column + j;
+//                Cell c = cells.get(index);
+//                c.state = CellState.dead;
+//            }
+//        }
+//        
+        int offsetX = new Random().nextInt(column);
+        int offsetY = new Random().nextInt(row);
+
         int indexPatternList = 0;
         for (int i = 0; i < pattern.getHeight(); i++) {
             for (int j = 0; j < pattern.getWidth(); j++) {                            
@@ -81,7 +82,7 @@ public class Grid extends JPanel {
                     index = (i + offsetX) * column + j + offsetY;
                     Cell cell = cells.get(index);
                     cell.state = CellState.alive;
-                    cell.setBackground(Color.BLUE);
+                    cell.setBackground(Color.GRAY);
                 }
             }
         }
@@ -142,4 +143,5 @@ public class Grid extends JPanel {
             c.neighbours.add(cells.get(i));
         }
     }
+
 }
