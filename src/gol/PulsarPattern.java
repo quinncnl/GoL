@@ -58,7 +58,6 @@ public PulsarPattern()
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
-        patternList.add(CellState.dead);
         patternList.add(CellState.alive);
         patternList.add(CellState.dead);
         patternList.add(CellState.alive);
@@ -69,8 +68,7 @@ public PulsarPattern()
         patternList.add(CellState.alive);
         
         //c2
-         patternList.add(CellState.alive);
-        patternList.add(CellState.dead);
+        patternList.add(CellState.alive);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
@@ -86,7 +84,6 @@ public PulsarPattern()
         
         //c3
          patternList.add(CellState.alive);
-        patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
@@ -134,7 +131,7 @@ public PulsarPattern()
         patternList.add(CellState.dead);
         
         
-        patternList.add(CellState.dead);
+         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.alive);
         patternList.add(CellState.alive);
@@ -154,7 +151,6 @@ public PulsarPattern()
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
-        patternList.add(CellState.dead);
         patternList.add(CellState.alive);
         patternList.add(CellState.dead);
         patternList.add(CellState.alive);
@@ -166,7 +162,6 @@ public PulsarPattern()
         
         //c2
         patternList.add(CellState.alive);
-        patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
@@ -186,7 +181,6 @@ public PulsarPattern()
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
-        patternList.add(CellState.dead);
         patternList.add(CellState.alive);
         patternList.add(CellState.dead);
         patternList.add(CellState.alive);
@@ -197,7 +191,7 @@ public PulsarPattern()
         patternList.add(CellState.alive);
         
         
-         patternList.add(CellState.dead);
+        patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
         patternList.add(CellState.dead);
