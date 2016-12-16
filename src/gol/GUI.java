@@ -58,7 +58,6 @@ public class GUI {
         },  2000, 50);
 
         Pattern pattern = new LightWeightSpaceship();
-//        pattern.horizontalReflection();
         grid.applyPattern(pattern);
                 
         EventQueue.invokeLater(new Runnable() {
